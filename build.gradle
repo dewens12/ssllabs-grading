@@ -20,6 +20,7 @@ repositories {
 }
 
 dependencies {
+    compile 'org.projectlombok:lombok:1.16.18'
     compile 'com.google.code.gson:gson:2.8.1'
     testCompile 'junit:junit:4.12'
 }
