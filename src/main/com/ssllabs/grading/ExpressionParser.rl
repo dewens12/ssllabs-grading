@@ -82,7 +82,7 @@ package com.ssllabs.grading;
 
     CMP_OP = SP* ( "==" %op_eq | "!=" %op_neq | ">" %op_gt | "<" %op_lt | ">=" %op_gte | "<=" %op_lte ) SP*;
 
-    IN = SP* "in" %op_in SP*;
+    IN_OP = SP* "in" %op_in SP*;
 
     LB = SP* "(" SP*;
 
@@ -103,7 +103,7 @@ package com.ssllabs.grading;
 
     list = ( "[" >val_list_start SP* list_value ( SP* "," SP* list_value )* SP* "]"  %val_list_end ) ;
 
-    comparison = SP* value (( CMP_OP value ) | ( IN list )) SP*;
+    comparison = SP* value (( CMP_OP value ) | ( IN_OP list )) SP*;
 
     simple_expression = comparison ( BOOLEAN_OP comparison )*;
 
