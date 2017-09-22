@@ -62,7 +62,12 @@ import java.util.Map;
 
     action val_reference {
         String s = new String(data, start, p - start);
-        expression.pushOperand(new Reference(s));
+        if (inList == false) {
+            expression.pushOperand(new Reference(s));
+        } else {
+            listNeedle = expression.popOperand();
+            expression.pushOperand(new Reference(s));
+        }
     }
 
     action val_string {
@@ -77,6 +82,10 @@ import java.util.Map;
 
     action val_list_end {
         expression.pushOperand(listNeedle);
+    }
+
+    action mark_in_list {
+        inList = true;
     }
 
     SP = ' ';
@@ -94,7 +103,7 @@ import java.util.Map;
 
     identifier = ( ( [a-zA-Z_] [a-zA-Z0-9_]* ) -- "true" -- "false" );
 
-    reference = ( identifier ( "." identifier )* ) %val_reference;
+    reference = ( identifier ( "." identifier )* ) >start %val_reference;
 
     string = '"' ( (ascii -- cntrl -- '"')* ) >start %val_string '"';
 
@@ -108,9 +117,9 @@ import java.util.Map;
 
     list_value = ( string | number ) >start;
 
-    list = ( "[" >val_list_start SP* list_value ( SP* "," SP* list_value )* SP* "]"  %val_list_end ) ;
+    list = ( "[" >val_list_start SP* list_value ( SP* "," SP* list_value )* SP* "]" ) ;
 
-    comparison = SP* value (( CMP_OP value ) | ( IN_OP ( list | reference ) )) SP*;
+    comparison = SP* value (( CMP_OP value ) | ( IN_OP >mark_in_list ( list | reference ) %val_list_end )) SP*;
 
     simple_expression = comparison ( BOOLEAN_OP comparison )*;
 
@@ -138,6 +147,7 @@ public class ExpressionParser {
         int tagStart = 0;
 
         Object listNeedle = null;
+        boolean inList = false;
 
         Expression expression = new Expression();
 

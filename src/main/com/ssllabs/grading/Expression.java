@@ -3,6 +3,7 @@ package com.ssllabs.grading;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
@@ -149,6 +150,23 @@ public class Expression {
 
         boolean inList = false;
         Object o = popOperand();
+
+        if (o instanceof List) {
+            for (Object objectInList : (List) o) {
+                if (needle.equals(objectInList)) {
+                    inList = true;
+                }
+            }
+
+            if (inList) {
+                operands.push(true);
+            } else {
+                operands.push(false);
+            }
+
+            return;
+        }
+
         while (o != Expression.LIST_TERMINATOR) {
             if (needle.equals(o)) {
                 inList = true;

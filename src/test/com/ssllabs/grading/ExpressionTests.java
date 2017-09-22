@@ -3,7 +3,9 @@ package com.ssllabs.grading;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ExpressionTests {
@@ -87,5 +89,17 @@ public class ExpressionTests {
         farm.put("hen", hen);
         Assert.assertTrue(ExpressionParser.evaluate("hen.chickens == 5", farm));
         Assert.assertFalse(ExpressionParser.evaluate("hen.locked == true", farm));
+    }
+
+    @Test
+    public void referencesList() {
+        Map<String, Object> farm = new HashMap<>();
+        List<String> animals = new ArrayList<>();
+        animals.add("chicken");
+        animals.add("pig");
+        animals.add("goat");
+        farm.put("animals", animals);
+        Assert.assertTrue(ExpressionParser.evaluate("\"pig\" in animals", farm));
+        Assert.assertFalse(ExpressionParser.evaluate("\"lamb\" in animals", farm));
     }
 }
