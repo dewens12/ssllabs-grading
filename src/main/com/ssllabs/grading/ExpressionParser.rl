@@ -82,6 +82,7 @@ import java.util.Map;
 
     action val_list_end {
         expression.pushOperand(listNeedle);
+        inList = false;
     }
 
     action mark_in_list {
