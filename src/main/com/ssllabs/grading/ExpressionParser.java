@@ -586,7 +586,7 @@ case 5:
         return expression;
     }
 
-    public boolean evaluate(String text) {
+    public static boolean evaluate(String text) {
         Expression expression = ExpressionParser.parse(text);
         return expression.evaluate();
     }
