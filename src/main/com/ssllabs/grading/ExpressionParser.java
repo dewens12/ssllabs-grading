@@ -3,7 +3,7 @@
 package com.ssllabs.grading;
 
 
-// line 126 "ExpressionParser.rl"
+// line 114 "ExpressionParser.rl"
 
 
 public class ExpressionParser {
@@ -15,10 +15,10 @@ private static byte[] init__ssllabs_grading_expression_actions_0()
 	return new byte [] {
 	    0,    1,    0,    1,    1,    1,    2,    1,    3,    1,    4,    1,
 	    5,    1,    6,    1,    7,    1,    8,    1,    9,    1,   10,    1,
-	   11,    1,   12,    1,   13,    1,   14,    1,   15,    1,   16,    2,
-	    2,    1,    2,    3,    1,    2,    4,    1,    2,    5,    1,    2,
-	    6,    1,    2,    7,    1,    2,    8,    1,    2,    9,    1,    2,
-	   10,   15,    2,   14,   10
+	   11,    1,   12,    1,   13,    1,   14,    1,   15,    2,    1,    0,
+	    2,    2,    0,    2,    3,    0,    2,    4,    0,    2,    5,    0,
+	    2,    6,    0,    2,    7,    0,    2,    8,    0,    2,    9,   14,
+	    2,   13,    9
 	};
 }
 
@@ -230,62 +230,62 @@ private static final byte _ssllabs_grading_expression_trans_targs[] = init__ssll
 private static byte[] init__ssllabs_grading_expression_trans_actions_0()
 {
 	return new byte [] {
-	    0,    3,    3,    3,    3,    3,    3,    3,    3,    0,    0,    0,
-	    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,   11,   44,
-	   44,   44,   44,   44,   44,   44,   44,    0,    0,    3,    3,    3,
-	    3,    3,    3,    3,    3,    0,    0,    0,    0,    0,    0,    5,
-	   35,   35,   35,   35,   35,   35,   35,   35,    0,   27,   27,   27,
-	   27,   27,   27,    0,    0,    0,   27,   27,   27,   27,   27,   27,
-	    0,    0,   15,   50,   50,    0,   50,   50,   50,   50,   50,   50,
-	    0,    0,    0,    7,   38,   38,   38,   38,   38,   38,   38,   38,
-	    0,   29,   29,    0,   29,   29,   29,    0,    0,   29,    0,    0,
-	    0,    0,    0,    0,    0,    0,    0,    0,    0,   29,   29,    0,
-	   29,   29,   29,    0,    0,    0,   29,    0,    0,    0,    0,    0,
-	    0,    0,    9,   41,   41,   41,   41,   41,   41,   41,   41,    0,
-	    0,    0,    0,    0,    0,    0,   13,   47,   47,    0,   47,   47,
-	   47,   47,   47,   47,    0,   17,   53,   53,   53,   53,   53,   53,
-	   53,   53,    0,   29,   29,    0,   29,   29,   29,    0,    0,   29,
-	    0,    0,    0,    0,    0,    0,   29,   29,    0,   29,   29,   29,
-	    0,    0,   29,    0,    0,    0,    0,    0,    0,   62,   29,    0,
-	   29,   29,   29,   59,    0,    0,   29,    0,    0,    0,    0,    0,
-	    0,    0,    0,    0,    0,   31,    0,    0,    0,    1,    1,    1,
-	    0,    0,    0,    0,    0,    0,    0,    0,   27,   27,   27,    0,
-	    0,    0,   27,   27,   27,    0,    0,    0,    0,    0,    0,   27,
-	   27,   27,    0,    0,    0,    0,    0,    0,   21,   59,    0,    0,
-	   31,    0,   29,   29,    0,   29,   29,   29,    0,    0,   29,    0,
-	    0,    0,    0,    0,    0,   29,   29,    0,   29,   29,   29,    0,
-	    0,   29,    0,    0,    0,    0,    0,    0,   29,   29,    0,   29,
-	   29,   29,    0,    0,   29,    0,    0,    0,    0,    0,    0,   29,
-	   29,    0,   29,   29,   29,    0,    0,   29,    0,    0,    0,    0,
-	    0,    0,   29,   29,    0,   29,   29,   29,    0,    0,    0,   29,
-	    0,    0,    0,    0,    0,   29,   29,    0,   29,   29,   29,    0,
-	    0,   29,    0,    0,    0,    0,    0,    0,   29,   29,    0,   29,
-	   29,   29,    0,    0,   29,    0,    0,    0,    0,    0,    0,   29,
-	   29,    0,   29,   29,   29,    0,    0,    0,   29,    0,    0,    0,
-	    0,    0,   25,   25,   25,   25,   25,   25,    0,   29,   29,    0,
-	   29,   29,   29,    0,    0,   29,    0,    0,    0,    0,    0,    0,
-	   29,   29,    0,   29,   29,   29,    0,    0,   29,    0,    0,    0,
-	    0,    0,    0,   29,   29,    0,   29,   29,   29,    0,    0,    0,
-	   29,    0,    0,    0,    0,    0,   23,   23,   23,   23,   23,   23,
-	    0,    0,    0,    0,    0,   19,   56,   56,   56,   56,   56,   56,
-	   56,   56,    0,    0,    0,    0,    0,   27,   27,   27,   27,   27,
-	   27,    0,    0,    0,    0,    0,    0,    0,    0,   27,   27,    0,
-	   27,    0,    0,   27,   27,   27,    0,    0,   29,   29,    0,    0,
-	    0,    0,   29,    0,    0,    0,    0,   29,   29,    0,    0,    0,
-	    0,    0,   29,    0,    0,    0,    0,   29,   29,    0,    0,    0,
-	    0,    0,   29,    0,    0,    0,    0,   29,   29,    0,    0,    0,
-	    0,    0,   29,    0,    0,    0,    0,   29,   29,    0,    0,    0,
-	    0,   29,    0,    0,    0,    0,    0,   29,   29,    0,    0,    0,
-	    0,    0,   29,    0,    0,    0,    0,   29,   29,    0,    0,    0,
-	    0,    0,   29,    0,    0,    0,    0,   29,   29,    0,    0,    0,
-	    0,    0,   29,    0,    0,    0,    0,   29,   29,    0,    0,    0,
-	    0,    0,   29,    0,    0,    0,    0,   29,   29,    0,    0,    0,
-	    0,    0,   29,    0,    0,    0,    0,   29,   29,    0,    0,    0,
-	    0,    0,   29,    0,    0,    0,    0,   25,   25,   25,    0,   29,
-	   29,    0,    0,    0,    0,    0,   29,    0,    0,    0,    0,   29,
-	   29,    0,    0,    0,    0,    0,   29,    0,    0,    0,    0,   29,
-	   29,    0,    0,    0,    0,    0,   29,    0,    0,    0,    0,   23,
-	   23,   23,    0,   33,   33,   33,    0,   27,   27,   27,    0,    0,
+	    0,    1,    1,    1,    1,    1,    1,    1,    1,    0,    0,    0,
+	    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    9,   42,
+	   42,   42,   42,   42,   42,   42,   42,    0,    0,    1,    1,    1,
+	    1,    1,    1,    1,    1,    0,    0,    0,    0,    0,    0,    3,
+	   33,   33,   33,   33,   33,   33,   33,   33,    0,   25,   25,   25,
+	   25,   25,   25,    0,    0,    0,   25,   25,   25,   25,   25,   25,
+	    0,    0,   13,   48,   48,    0,   48,   48,   48,   48,   48,   48,
+	    0,    0,    0,    5,   36,   36,   36,   36,   36,   36,   36,   36,
+	    0,   27,   27,    0,   27,   27,   27,    0,    0,   27,    0,    0,
+	    0,    0,    0,    0,    0,    0,    0,    0,    0,   27,   27,    0,
+	   27,   27,   27,    0,    0,    0,   27,    0,    0,    0,    0,    0,
+	    0,    0,    7,   39,   39,   39,   39,   39,   39,   39,   39,    0,
+	    0,    0,    0,    0,    0,    0,   11,   45,   45,    0,   45,   45,
+	   45,   45,   45,   45,    0,   15,   51,   51,   51,   51,   51,   51,
+	   51,   51,    0,   27,   27,    0,   27,   27,   27,    0,    0,   27,
+	    0,    0,    0,    0,    0,    0,   27,   27,    0,   27,   27,   27,
+	    0,    0,   27,    0,    0,    0,    0,    0,    0,   60,   27,    0,
+	   27,   27,   27,   57,    0,    0,   27,    0,    0,    0,    0,    0,
+	    0,    0,    0,    0,    0,   29,    0,    0,    0,    1,    1,    1,
+	    0,    0,    0,    0,    0,    0,    0,    0,   25,   25,   25,    0,
+	    0,    0,   25,   25,   25,    0,    0,    0,    0,    0,    0,   25,
+	   25,   25,    0,    0,    0,    0,    0,    0,   19,   57,    0,    0,
+	   29,    0,   27,   27,    0,   27,   27,   27,    0,    0,   27,    0,
+	    0,    0,    0,    0,    0,   27,   27,    0,   27,   27,   27,    0,
+	    0,   27,    0,    0,    0,    0,    0,    0,   27,   27,    0,   27,
+	   27,   27,    0,    0,   27,    0,    0,    0,    0,    0,    0,   27,
+	   27,    0,   27,   27,   27,    0,    0,   27,    0,    0,    0,    0,
+	    0,    0,   27,   27,    0,   27,   27,   27,    0,    0,    0,   27,
+	    0,    0,    0,    0,    0,   27,   27,    0,   27,   27,   27,    0,
+	    0,   27,    0,    0,    0,    0,    0,    0,   27,   27,    0,   27,
+	   27,   27,    0,    0,   27,    0,    0,    0,    0,    0,    0,   27,
+	   27,    0,   27,   27,   27,    0,    0,    0,   27,    0,    0,    0,
+	    0,    0,   23,   23,   23,   23,   23,   23,    0,   27,   27,    0,
+	   27,   27,   27,    0,    0,   27,    0,    0,    0,    0,    0,    0,
+	   27,   27,    0,   27,   27,   27,    0,    0,   27,    0,    0,    0,
+	    0,    0,    0,   27,   27,    0,   27,   27,   27,    0,    0,    0,
+	   27,    0,    0,    0,    0,    0,   21,   21,   21,   21,   21,   21,
+	    0,    0,    0,    0,    0,   17,   54,   54,   54,   54,   54,   54,
+	   54,   54,    0,    0,    0,    0,    0,   25,   25,   25,   25,   25,
+	   25,    0,    0,    0,    0,    0,    0,    0,    0,   25,   25,    0,
+	   25,    0,    0,   25,   25,   25,    0,    0,   27,   27,    0,    0,
+	    0,    0,   27,    0,    0,    0,    0,   27,   27,    0,    0,    0,
+	    0,    0,   27,    0,    0,    0,    0,   27,   27,    0,    0,    0,
+	    0,    0,   27,    0,    0,    0,    0,   27,   27,    0,    0,    0,
+	    0,    0,   27,    0,    0,    0,    0,   27,   27,    0,    0,    0,
+	    0,   27,    0,    0,    0,    0,    0,   27,   27,    0,    0,    0,
+	    0,    0,   27,    0,    0,    0,    0,   27,   27,    0,    0,    0,
+	    0,    0,   27,    0,    0,    0,    0,   27,   27,    0,    0,    0,
+	    0,    0,   27,    0,    0,    0,    0,   27,   27,    0,    0,    0,
+	    0,    0,   27,    0,    0,    0,    0,   27,   27,    0,    0,    0,
+	    0,    0,   27,    0,    0,    0,    0,   27,   27,    0,    0,    0,
+	    0,    0,   27,    0,    0,    0,    0,   23,   23,   23,    0,   27,
+	   27,    0,    0,    0,    0,    0,   27,    0,    0,    0,    0,   27,
+	   27,    0,    0,    0,    0,    0,   27,    0,    0,    0,    0,   27,
+	   27,    0,    0,    0,    0,    0,   27,    0,    0,    0,    0,   21,
+	   21,   21,    0,   31,   31,   31,    0,   25,   25,   25,    0,    0,
 	    0,    0,    0
 	};
 }
@@ -300,9 +300,9 @@ private static byte[] init__ssllabs_grading_expression_eof_actions_0()
 	    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
 	    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
 	    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-	    0,    0,    0,    0,    0,    0,    0,   27,   27,   29,   29,   29,
-	   29,   29,   29,   29,   29,   29,   29,   29,   25,   29,   29,   29,
-	   23,   33,   27
+	    0,    0,    0,    0,    0,    0,    0,   25,   25,   27,   27,   27,
+	   27,   27,   27,   27,   27,   27,   27,   27,   23,   27,   27,   27,
+	   21,   31,   25
 	};
 }
 
@@ -316,7 +316,7 @@ static final int ssllabs_grading_expression_error = 0;
 static final int ssllabs_grading_expression_en_main = 1;
 
 
-// line 131 "ExpressionParser.rl"
+// line 119 "ExpressionParser.rl"
 
     public static Expression parse(String input) {
         char[] data = input.toCharArray();
@@ -338,7 +338,7 @@ static final int ssllabs_grading_expression_en_main = 1;
 	cs = ssllabs_grading_expression_start;
 	}
 
-// line 147 "ExpressionParser.rl"
+// line 135 "ExpressionParser.rl"
         
 // line 344 "ExpressionParser.java"
 	{
@@ -428,75 +428,69 @@ case 1:
 	case 1:
 // line 10 "ExpressionParser.rl"
 	{
-        start = p;
     }
 	break;
 	case 2:
-// line 18 "ExpressionParser.rl"
+// line 13 "ExpressionParser.rl"
 	{
     }
 	break;
 	case 3:
-// line 21 "ExpressionParser.rl"
-	{
-    }
-	break;
-	case 4:
-// line 24 "ExpressionParser.rl"
+// line 16 "ExpressionParser.rl"
 	{
         expression.pushOperator(Operator.eq);
     }
 	break;
-	case 5:
-// line 28 "ExpressionParser.rl"
+	case 4:
+// line 20 "ExpressionParser.rl"
 	{
         expression.pushOperator(Operator.neq);
     }
 	break;
-	case 6:
-// line 32 "ExpressionParser.rl"
+	case 5:
+// line 24 "ExpressionParser.rl"
 	{
         expression.pushOperator(Operator.gt);
     }
 	break;
-	case 7:
-// line 36 "ExpressionParser.rl"
+	case 6:
+// line 28 "ExpressionParser.rl"
 	{
         expression.pushOperator(Operator.lt);
     }
 	break;
-	case 8:
-// line 40 "ExpressionParser.rl"
+	case 7:
+// line 32 "ExpressionParser.rl"
 	{
         expression.pushOperator(Operator.gte);
     }
 	break;
-	case 9:
-// line 44 "ExpressionParser.rl"
+	case 8:
+// line 36 "ExpressionParser.rl"
 	{;
         expression.pushOperator(Operator.lte);
     }
 	break;
-	case 10:
-// line 48 "ExpressionParser.rl"
+	case 9:
+// line 40 "ExpressionParser.rl"
 	{
         expression.pushOperator(Operator.in);
     }
 	break;
-	case 11:
-// line 52 "ExpressionParser.rl"
+	case 10:
+// line 44 "ExpressionParser.rl"
 	{
         expression.pushOperand(Boolean.TRUE);
     }
 	break;
-	case 12:
-// line 56 "ExpressionParser.rl"
+	case 11:
+// line 48 "ExpressionParser.rl"
 	{
         expression.pushOperand(Boolean.FALSE);
     }
 	break;
-	case 13:
-// line 60 "ExpressionParser.rl"
+	case 12:
+// line 52 "ExpressionParser.rl"
 	{
         String s = new String(data, start, p - start);
         if (s.startsWith("0x")) {
@@ -506,28 +500,28 @@ case 1:
         }
     }
 	break;
-	case 14:
-// line 69 "ExpressionParser.rl"
+	case 13:
+// line 61 "ExpressionParser.rl"
 	{
         String s = new String(data, start, p - start);
     }
 	break;
-	case 15:
-// line 77 "ExpressionParser.rl"
+	case 14:
+// line 65 "ExpressionParser.rl"
 	{
         listNeedle = expression.popOperand();
         expression.pushOperand(Expression.LIST_TERMINATOR);
         System.err.println("List start");
     }
 	break;
-	case 16:
-// line 83 "ExpressionParser.rl"
+	case 15:
+// line 71 "ExpressionParser.rl"
 	{
         expression.pushOperand(listNeedle);
         System.err.println("List end");
     }
 	break;
-// line 531 "ExpressionParser.java"
+// line 525 "ExpressionParser.java"
 			}
 		}
 	}
@@ -548,20 +542,20 @@ case 4:
 	int __nacts = (int) _ssllabs_grading_expression_actions[__acts++];
 	while ( __nacts-- > 0 ) {
 		switch ( _ssllabs_grading_expression_actions[__acts++] ) {
-	case 11:
-// line 52 "ExpressionParser.rl"
+	case 10:
+// line 44 "ExpressionParser.rl"
 	{
         expression.pushOperand(Boolean.TRUE);
     }
 	break;
-	case 12:
-// line 56 "ExpressionParser.rl"
+	case 11:
+// line 48 "ExpressionParser.rl"
 	{
         expression.pushOperand(Boolean.FALSE);
     }
 	break;
-	case 13:
-// line 60 "ExpressionParser.rl"
+	case 12:
+// line 52 "ExpressionParser.rl"
 	{
         String s = new String(data, start, p - start);
         if (s.startsWith("0x")) {
@@ -571,20 +565,20 @@ case 4:
         }
     }
 	break;
-	case 14:
-// line 69 "ExpressionParser.rl"
+	case 13:
+// line 61 "ExpressionParser.rl"
 	{
         String s = new String(data, start, p - start);
     }
 	break;
-	case 16:
-// line 83 "ExpressionParser.rl"
+	case 15:
+// line 71 "ExpressionParser.rl"
 	{
         expression.pushOperand(listNeedle);
         System.err.println("List end");
     }
 	break;
-// line 588 "ExpressionParser.java"
+// line 582 "ExpressionParser.java"
 		}
 	}
 	}
@@ -594,7 +588,7 @@ case 5:
 	break; }
 	}
 
-// line 148 "ExpressionParser.rl"
+// line 136 "ExpressionParser.rl"
 
         if (cs < 54) {
             throw new RuntimeException("Syntax error at position " + p);

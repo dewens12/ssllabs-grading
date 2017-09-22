@@ -7,14 +7,6 @@ package com.ssllabs.grading;
         start = p;
     }
 
-    action start_value {
-        start = p;
-    }
-
-    action capture_value {
-        String s = new String(data, start, p - start);
-    }
-
     action op_and {
     }
 
@@ -70,10 +62,6 @@ package com.ssllabs.grading;
         String s = new String(data, start, p - start);
     }
 
-    action val_list_value {
-        String s = new String(data, start, p - start);
-    }
-
     action val_list_start {
         listNeedle = expression.popOperand();
         expression.pushOperand(Expression.LIST_TERMINATOR);
@@ -106,7 +94,7 @@ package com.ssllabs.grading;
 
     number = ( [0-9]+ | "0x" [0-9a-fA-F]+ ) %val_number;
 
-    value = ( reference %val_reference | literal | number | "true" %val_true | "false" %val_false ) >start_value;
+    value = ( reference %val_reference | literal | number | "true" %val_true | "false" %val_false ) >start;
 
     list_value = ( literal | number ) >start;
 
