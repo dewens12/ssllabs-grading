@@ -1,5 +1,7 @@
 package com.ssllabs.grading;
 
+import java.util.Map;
+
 %%{
     machine ssllabs_grading_expression;
 
@@ -60,6 +62,7 @@ package com.ssllabs.grading;
 
     action val_reference {
         String s = new String(data, start, p - start);
+        expression.pushOperand(new Reference(s));
     }
 
     action val_string {
@@ -82,7 +85,7 @@ package com.ssllabs.grading;
 
     CMP_OP = SP* ( "==" %op_eq | "!=" %op_neq | ">" %op_gt | "<" %op_lt | ">=" %op_gte | "<=" %op_lte ) SP*;
 
-    IN_OP = SP* "in" %op_in SP*;
+    IN_OP = SP+ "in" %op_in SP+;
 
     LB = SP* "(" SP*;
 
@@ -91,13 +94,17 @@ package com.ssllabs.grading;
 
     identifier = ( ( [a-zA-Z_] [a-zA-Z0-9_]* ) -- "true" -- "false" );
 
-    reference = ( identifier ( "." identifier )* );
+    reference = ( identifier ( "." identifier )* ) %val_reference;
 
     string = '"' ( (ascii -- cntrl -- '"')* ) >start %val_string '"';
 
     number = ( [0-9]+ | "0x" [0-9a-fA-F]+ ) %val_number;
 
-    value = ( reference %val_reference | string | number | "true" %val_true | "false" %val_false ) >start;
+    TRUE = "true" %val_true;
+
+    FALSE = "false" %val_false;
+
+    value = ( reference | string | number | TRUE | FALSE ) >start;
 
     list_value = ( string | number ) >start;
 
@@ -147,5 +154,10 @@ public class ExpressionParser {
     public static boolean evaluate(String text) {
         Expression expression = ExpressionParser.parse(text);
         return expression.evaluate();
+    }
+
+    public static boolean evaluate(String text, Map<String, Object> model) {
+        Expression expression = ExpressionParser.parse(text);
+        return expression.evaluate(model);
     }
 }
