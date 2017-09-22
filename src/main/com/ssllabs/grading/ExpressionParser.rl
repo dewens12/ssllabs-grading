@@ -110,7 +110,7 @@ import java.util.Map;
 
     list = ( "[" >val_list_start SP* list_value ( SP* "," SP* list_value )* SP* "]"  %val_list_end ) ;
 
-    comparison = SP* value (( CMP_OP value ) | ( IN_OP list )) SP*;
+    comparison = SP* value (( CMP_OP value ) | ( IN_OP ( list | reference ) )) SP*;
 
     simple_expression = comparison ( BOOLEAN_OP comparison )*;
 

@@ -52,7 +52,7 @@ public class ExpressionTests {
     }
 
     @Test
-    public void references1() {
+    public void referencesDirect() {
         Map<String, Object> farm = new HashMap<>();
         farm.put("chickens", 5);
         farm.put("cows", 2);
@@ -63,7 +63,7 @@ public class ExpressionTests {
     }
 
     @Test
-    public void references2() {
+    public void referencesMap() {
         Map<String, Object> farm = new HashMap<>();
         Map<String, Object> barn = new HashMap<>();
         barn.put("chickens", 5);
