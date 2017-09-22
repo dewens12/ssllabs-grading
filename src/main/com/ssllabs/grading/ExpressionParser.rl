@@ -62,15 +62,18 @@ package com.ssllabs.grading;
         String s = new String(data, start, p - start);
     }
 
+    action val_string {
+        String s = new String(data, start, p - start);
+        expression.pushOperand(s);
+    }
+
     action val_list_start {
         listNeedle = expression.popOperand();
         expression.pushOperand(Expression.LIST_TERMINATOR);
-        System.err.println("List start");
     }
 
     action val_list_end {
         expression.pushOperand(listNeedle);
-        System.err.println("List end");
     }
 
     SP = ' ';
@@ -90,13 +93,13 @@ package com.ssllabs.grading;
 
     reference = ( identifier ( "." identifier )* );
 
-    literal = '"' (ascii -- cntrl -- '"')* '"';
+    string = '"' ( (ascii -- cntrl -- '"')* ) >start %val_string '"';
 
     number = ( [0-9]+ | "0x" [0-9a-fA-F]+ ) %val_number;
 
-    value = ( reference %val_reference | literal | number | "true" %val_true | "false" %val_false ) >start;
+    value = ( reference %val_reference | string | number | "true" %val_true | "false" %val_false ) >start;
 
-    list_value = ( literal | number ) >start;
+    list_value = ( string | number ) >start;
 
     list = ( "[" >val_list_start SP* list_value ( SP* "," SP* list_value )* SP* "]"  %val_list_end ) ;
 

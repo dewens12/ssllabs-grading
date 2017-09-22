@@ -40,4 +40,11 @@ public class ExpressionTests {
         Assert.assertTrue(ExpressionParser.evaluate("1 in [ 1, 2, 3 ]"));
         Assert.assertFalse(ExpressionParser.evaluate("4 in [ 1, 2, 3 ]"));
     }
+
+    @Test
+    public void strings() {
+        Assert.assertTrue(ExpressionParser.evaluate("\"egg\" == \"egg\""));
+        Assert.assertFalse(ExpressionParser.evaluate("\"egg\" == \"chicken\""));
+        Assert.assertTrue(ExpressionParser.evaluate("\"chicken\" in [ \"why\", \"did\", \"the\", \"chicken\", \"cross\", \"the\", \"road\", \"?\" ]"));
+    }
 }
