@@ -3,7 +3,7 @@
 package com.ssllabs.grading;
 
 
-// line 111 "ExpressionParser.rl"
+// line 120 "ExpressionParser.rl"
 
 
 public class ExpressionParser {
@@ -317,7 +317,7 @@ static final int ssllabs_grading_expression_error = 0;
 static final int ssllabs_grading_expression_en_main = 1;
 
 
-// line 116 "ExpressionParser.rl"
+// line 125 "ExpressionParser.rl"
 
     public static Expression parse(String input) {
         char[] data = input.toCharArray();
@@ -337,7 +337,7 @@ static final int ssllabs_grading_expression_en_main = 1;
 	cs = ssllabs_grading_expression_start;
 	}
 
-// line 130 "ExpressionParser.rl"
+// line 139 "ExpressionParser.rl"
         
 // line 343 "ExpressionParser.java"
 	{
@@ -455,69 +455,78 @@ case 1:
 	case 6:
 // line 32 "ExpressionParser.rl"
 	{
+        expression.pushOperator(Operator.gt);
     }
 	break;
 	case 7:
-// line 35 "ExpressionParser.rl"
+// line 36 "ExpressionParser.rl"
 	{
+        expression.pushOperator(Operator.lt);
     }
 	break;
 	case 8:
-// line 38 "ExpressionParser.rl"
+// line 40 "ExpressionParser.rl"
 	{
+        expression.pushOperator(Operator.gte);
     }
 	break;
 	case 9:
-// line 41 "ExpressionParser.rl"
+// line 44 "ExpressionParser.rl"
 	{;
+        expression.pushOperator(Operator.lte);
     }
 	break;
 	case 10:
-// line 44 "ExpressionParser.rl"
+// line 48 "ExpressionParser.rl"
 	{
     }
 	break;
 	case 11:
-// line 47 "ExpressionParser.rl"
+// line 51 "ExpressionParser.rl"
 	{
         expression.pushOperand(Boolean.TRUE);
     }
 	break;
 	case 12:
-// line 51 "ExpressionParser.rl"
+// line 55 "ExpressionParser.rl"
 	{
         expression.pushOperand(Boolean.FALSE);
     }
 	break;
 	case 13:
-// line 55 "ExpressionParser.rl"
+// line 59 "ExpressionParser.rl"
 	{
         String s = new String(data, start, p - start);
+        if (s.startsWith("0x")) {
+            expression.pushOperand(Integer.valueOf(s.substring(2), 16));
+        } else {
+            expression.pushOperand(Integer.valueOf(s));
+        }
     }
 	break;
 	case 14:
-// line 59 "ExpressionParser.rl"
+// line 68 "ExpressionParser.rl"
 	{
         String s = new String(data, start, p - start);
     }
 	break;
 	case 15:
-// line 63 "ExpressionParser.rl"
+// line 72 "ExpressionParser.rl"
 	{
         String s = new String(data, start, p - start);
     }
 	break;
 	case 16:
-// line 67 "ExpressionParser.rl"
+// line 76 "ExpressionParser.rl"
 	{
     }
 	break;
 	case 17:
-// line 70 "ExpressionParser.rl"
+// line 79 "ExpressionParser.rl"
 	{
     }
 	break;
-// line 521 "ExpressionParser.java"
+// line 530 "ExpressionParser.java"
 			}
 		}
 	}
@@ -539,35 +548,40 @@ case 4:
 	while ( __nacts-- > 0 ) {
 		switch ( _ssllabs_grading_expression_actions[__acts++] ) {
 	case 11:
-// line 47 "ExpressionParser.rl"
+// line 51 "ExpressionParser.rl"
 	{
         expression.pushOperand(Boolean.TRUE);
     }
 	break;
 	case 12:
-// line 51 "ExpressionParser.rl"
+// line 55 "ExpressionParser.rl"
 	{
         expression.pushOperand(Boolean.FALSE);
     }
 	break;
 	case 13:
-// line 55 "ExpressionParser.rl"
+// line 59 "ExpressionParser.rl"
 	{
         String s = new String(data, start, p - start);
+        if (s.startsWith("0x")) {
+            expression.pushOperand(Integer.valueOf(s.substring(2), 16));
+        } else {
+            expression.pushOperand(Integer.valueOf(s));
+        }
     }
 	break;
 	case 14:
-// line 59 "ExpressionParser.rl"
+// line 68 "ExpressionParser.rl"
 	{
         String s = new String(data, start, p - start);
     }
 	break;
 	case 17:
-// line 70 "ExpressionParser.rl"
+// line 79 "ExpressionParser.rl"
 	{
     }
 	break;
-// line 571 "ExpressionParser.java"
+// line 585 "ExpressionParser.java"
 		}
 	}
 	}
@@ -577,7 +591,7 @@ case 5:
 	break; }
 	}
 
-// line 131 "ExpressionParser.rl"
+// line 140 "ExpressionParser.rl"
 
         if (cs < 55) {
             throw new RuntimeException("Syntax error at position " + p);

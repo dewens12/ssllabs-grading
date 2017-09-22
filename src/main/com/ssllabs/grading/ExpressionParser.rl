@@ -30,15 +30,19 @@ package com.ssllabs.grading;
     }
 
     action op_gt {
+        expression.pushOperator(Operator.gt);
     }
 
     action op_lt {
+        expression.pushOperator(Operator.lt);
     }
 
     action op_gte {
+        expression.pushOperator(Operator.gte);
     }
 
     action op_lte {;
+        expression.pushOperator(Operator.lte);
     }
 
     action op_in {
@@ -54,6 +58,11 @@ package com.ssllabs.grading;
 
     action val_number {
         String s = new String(data, start, p - start);
+        if (s.startsWith("0x")) {
+            expression.pushOperand(Integer.valueOf(s.substring(2), 16));
+        } else {
+            expression.pushOperand(Integer.valueOf(s));
+        }
     }
 
     action val_reference {
