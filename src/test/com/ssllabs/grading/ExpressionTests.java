@@ -34,4 +34,10 @@ public class ExpressionTests {
     public void numberParsing() {
         Assert.assertTrue(ExpressionParser.evaluate("16 == 0x10"));
     }
+
+    @Test
+    public void listOperator() {
+        Assert.assertTrue(ExpressionParser.evaluate("1 in [ 1, 2, 3 ]"));
+        Assert.assertFalse(ExpressionParser.evaluate("4 in [ 1, 2, 3 ]"));
+    }
 }

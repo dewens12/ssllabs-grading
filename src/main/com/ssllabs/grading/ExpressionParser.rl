@@ -46,6 +46,7 @@ package com.ssllabs.grading;
     }
 
     action op_in {
+        expression.pushOperator(Operator.in);
     }
 
     action val_true {
@@ -74,9 +75,14 @@ package com.ssllabs.grading;
     }
 
     action val_list_start {
+        listNeedle = expression.popOperand();
+        expression.pushOperand(Expression.LIST_TERMINATOR);
+        System.err.println("List start");
     }
 
     action val_list_end {
+        expression.pushOperand(listNeedle);
+        System.err.println("List end");
     }
 
     SP = ' ';
@@ -98,13 +104,13 @@ package com.ssllabs.grading;
 
     literal = '"' (ascii -- cntrl -- '"')* '"';
 
-    number = ( [0-9]+ | "0x" [0-9a-fA-F]+ );
+    number = ( [0-9]+ | "0x" [0-9a-fA-F]+ ) %val_number;
 
-    value = ( reference %val_reference | literal | number %val_number | "true" %val_true | "false" %val_false ) >start_value;
+    value = ( reference %val_reference | literal | number | "true" %val_true | "false" %val_false ) >start_value;
 
-    list_value = ( literal | number ) >start %val_list_value;
+    list_value = ( literal | number ) >start;
 
-    list = ( "[" SP* list_value ( SP* "," SP* list_value )* SP* "]" >val_list_start %val_list_end ) ;
+    list = ( "[" >val_list_start SP* list_value ( SP* "," SP* list_value )* SP* "]"  %val_list_end ) ;
 
     comparison = SP* value (( CMP_OP value ) | ( IN list )) SP*;
 
@@ -132,6 +138,8 @@ public class ExpressionParser {
 
         int start = 0;
         int tagStart = 0;
+
+        Object listNeedle = null;
 
         Expression expression = new Expression();
 
