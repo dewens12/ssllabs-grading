@@ -27,10 +27,10 @@ dependencies {
 
 sourceSets {
     main {
-        java.srcDirs = ["src/main/java"]
+        java.srcDirs = ["src/main"]
     }
 
     test {
-        java.srcDirs = ["src/test/java"]
+        java.srcDirs = ["src/test"]
     }
 }
